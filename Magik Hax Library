@@ -142,21 +142,21 @@ function Library.Category(name,description,clr)
 		ToggleButton.BorderSizePixel = 0
 		ToggleButton.Position = UDim2.new(0.925000012, 0, 0.5, 0)
 		ToggleButton.Size = UDim2.new(0, 22, 0, 22)
-		ToggleButton.Image = "33450397"
+		ToggleButton.Image = "http://www.roblox.com/asset/?id=33450396"
 		local tog1 = false
 		ToggleButton.MouseButton1Click:Connect(function()
 			if tog1 == false then 
 				tog1 = true 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Image = "82724487"
+				ToggleButton.Image = "http://www.roblox.com/asset/?id=82724486"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(true)
 				 else tog1 = false 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Image = "33450397"
+				ToggleButton.Image = "http://www.roblox.com/asset/?id=33450396"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(false)
@@ -309,6 +309,105 @@ function Library.Category(name,description,clr)
 				Dropdown.Text = v
 				gs:Create(Dropdown, TweenInfo.new(0.4), {TextColor3 = Color3.fromRGB(238, 239, 238)}):Play()
 				OpenButton.Text = ">"
+			end)
+		end
+	end
+	function win:SearchBox(name,options,callback)
+		callback = callback or function() end
+		local Dropdown = Instance.new("TextLabel")
+		local OpenButton = Instance.new("TextBox")
+		local Val = Instance.new("StringValue")
+		local Frame_2 = Instance.new("Frame")
+		local UIListLayout_3 = Instance.new("UIListLayout")
+		local old = name
+		spawn(function()
+OpenButton:GetPropertyChangedSignal("Text"):Connect(function()
+			for i,v in pairs(Frame_2:GetChildren()) do
+				if v.ClassName ~= "UIListLayout" then
+					if v.ClassName ~= "BoolValue" then
+						if string.sub(string.lower(v.Text), 1, string.len(OpenButton.Text)) == string.lower(OpenButton.Text) then
+							siz = siz + v.Size.Y.Offset 
+						end
+					end
+				end
+			end
+			if OpenButton.Text == "" then 
+				local sav = Dropdown.Text
+			gs:Create(Frame_2, TweenInfo.new(0.4), {Size =UDim2.new(0, 0,0, siz)}):Play()
+			wait(0.1)
+			siz = 0
+			gs:Create(Dropdown, TweenInfo.new(0.4), {TextColor3 = Color3.fromRGB(238, 239, 238)}):Play()
+			wait(0.3)
+			else
+				gs:Create(Frame_2, TweenInfo.new(0.4), {Size =UDim2.new(0, 185,0, siz)}):Play()
+				wait(0.1)
+				gs:Create(Dropdown, TweenInfo.new(0.4), {TextColor3 = Color3.fromRGB(78, 80, 78)}):Play()
+				wait(0.3)
+				siz = 0
+			end
+		end)
+end)
+		Dropdown.Name = "Dropdown"
+		Dropdown.Parent = Frame
+		Dropdown.BackgroundColor3 = Color3.fromRGB(42, 44, 42)
+		Dropdown.BackgroundTransparency = 1.000
+		Dropdown.BorderSizePixel = 0
+		Dropdown.Size = UDim2.new(0, 200, 0, 30)
+		Dropdown.Font = Enum.Font.SourceSansSemibold
+		Dropdown.Text = " "..name
+		Dropdown.TextXAlignment = "Left"
+		Dropdown.TextColor3 = Color3.fromRGB(238, 239, 238)
+		Dropdown.TextSize = 16.000
+		Dropdown.TextWrapped = true
+		
+		OpenButton.Name = "BButton"
+		OpenButton.Parent = Dropdown
+		OpenButton.AnchorPoint = Vector2.new(0.5, 0.5)
+		OpenButton.BackgroundColor3 = Color3.fromRGB(42, 44, 42)
+		OpenButton.BorderColor3 = Color3.fromRGB(206, 196, 205)
+		OpenButton.BorderSizePixel = 0
+		OpenButton.ClipsDescendants = false
+		OpenButton.Position = UDim2.new(0.925000012, 0, 0.5, 0)
+		OpenButton.Size = UDim2.new(0, 22, 0, 22)
+		OpenButton.Font = Enum.Font.SourceSansSemibold
+		OpenButton.Text = ""
+		OpenButton.TextColor3 = Color3.fromRGB(209, 211, 209)
+		OpenButton.TextSize = 25.000
+		OpenButton.TextWrapped = true
+		OpenButton.TextScaled = true
+		
+		Frame_2.Parent = OpenButton
+		Frame_2.BackgroundColor3 = Color3.fromRGB(19, 20, 19)
+		Frame_2.BorderSizePixel = 0
+		Frame_2.ClipsDescendants = true
+		Frame_2.Position = UDim2.new(1 + 1-0.787500024, 0, 0, 0)
+		Frame_2.Size = UDim2.new(0, 0, 0, 0)
+		
+		UIListLayout_3.Parent = Frame_2
+		UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+		for i,v in pairs(options) do
+			local PButton = Instance.new("TextButton")		
+			PButton.Name = "PButton"
+			PButton.Parent = Frame_2
+			PButton.BackgroundColor3 = Color3.fromRGB(19, 20, 19)
+			PButton.BorderSizePixel = 0
+			PButton.Size = UDim2.new(0, 185, 0, 30)
+			PButton.Font = Enum.Font.SourceSansSemibold
+			PButton.Text = v
+			PButton.TextColor3 = Color3.fromRGB(209, 211, 209)
+			PButton.TextSize = 20.000
+			PButton.TextWrapped = true
+			PButton.MouseButton1Click:Connect(function()
+				gs:Create(PButton, TweenInfo.new(0.3), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
+				wait(0.3)
+				gs:Create(Frame_2, TweenInfo.new(0.4), {Size =UDim2.new(0, 0,0, siz)}):Play()
+				wait(0.1)
+				gs:Create(PButton, TweenInfo.new(0.3), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
+				wait(0.3)
+				Val.Value = v
+				callback(v)
+				Dropdown.Text = " "..v
+				gs:Create(Dropdown, TweenInfo.new(0.4), {TextColor3 = Color3.fromRGB(238, 239, 238)}):Play()
 			end)
 		end
 	end
@@ -1336,5 +1435,6 @@ for i,v in pairs(Handler:GetChildren()) do
 	end
 end
 Handler.Size = UDim2.new(0, 200, 0, si)
-
 return Library;
+
+
