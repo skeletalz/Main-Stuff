@@ -121,7 +121,7 @@ function Library.Category(name,description,clr)
 	function win:Toggle(name,callback)
 		callback = callback or function(State)end
 		local Toggle = Instance.new("TextLabel")
-		local ToggleButton = Instance.new("TextButton")
+		local ToggleButton = Instance.new("ImageButton")
 		Toggle.Name = "Toggle"
 		Toggle.Parent = Frame
 		Toggle.BackgroundColor3 = Color3.fromRGB(42, 44, 42)
@@ -144,6 +144,7 @@ function Library.Category(name,description,clr)
 		ToggleButton.Size = UDim2.new(0, 22, 0, 22)
 		ToggleButton.Font = Enum.Font.SourceSans
 		ToggleButton.Text = ""
+		ToggleButton.Texture = "33450397"
 		ToggleButton.TextColor3 = Color3.fromRGB(209, 211, 209)
 		ToggleButton.TextSize = 30.000
 		ToggleButton.TextWrapped = true
@@ -153,14 +154,14 @@ function Library.Category(name,description,clr)
 				tog1 = true 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Text = "✓"
+				ToggleButton.Texture = "82724487"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(true)
 				 else tog1 = false 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Text = "" 
+				ToggleButton.Texture = "33450397"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(false)
