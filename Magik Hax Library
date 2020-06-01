@@ -142,12 +142,7 @@ function Library.Category(name,description,clr)
 		ToggleButton.BorderSizePixel = 0
 		ToggleButton.Position = UDim2.new(0.925000012, 0, 0.5, 0)
 		ToggleButton.Size = UDim2.new(0, 22, 0, 22)
-		ToggleButton.Font = Enum.Font.SourceSans
-		ToggleButton.Text = ""
 		ToggleButton.Texture = "33450397"
-		ToggleButton.TextColor3 = Color3.fromRGB(209, 211, 209)
-		ToggleButton.TextSize = 30.000
-		ToggleButton.TextWrapped = true
 		local tog1 = false
 		ToggleButton.MouseButton1Click:Connect(function()
 			if tog1 == false then 
