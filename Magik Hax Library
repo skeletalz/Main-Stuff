@@ -142,21 +142,21 @@ function Library.Category(name,description,clr)
 		ToggleButton.BorderSizePixel = 0
 		ToggleButton.Position = UDim2.new(0.925000012, 0, 0.5, 0)
 		ToggleButton.Size = UDim2.new(0, 22, 0, 22)
-		ToggleButton.Texture = "33450397"
+		ToggleButton.Image = "33450397"
 		local tog1 = false
 		ToggleButton.MouseButton1Click:Connect(function()
 			if tog1 == false then 
 				tog1 = true 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Texture = "82724487"
+				ToggleButton.Image = "82724487"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(true)
 				 else tog1 = false 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Texture = "33450397"
+				ToggleButton.Image = "33450397"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(false)
