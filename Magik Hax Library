@@ -153,7 +153,7 @@ function Library.Category(name,description,clr)
 				tog1 = true 
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(36, 38, 36)}):Play()
 				wait(0.15)
-				ToggleButton.Text = "âœ“"
+				ToggleButton.Text = "✓"
 				gs:Create(ToggleButton, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(19, 20, 19)}):Play()
 				wait(0.15)
 				callback(true)
