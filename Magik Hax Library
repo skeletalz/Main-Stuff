@@ -1,14 +1,14 @@
 local Library = {}
 local gs = game:GetService("TweenService")
-	if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MagikHax") ~= nil then
-		 game.Players.LocalPlayer.PlayerGui:FindFirstChild("MagikHax"):Destroy()
+	if game.CoreGui:FindFirstChild("MagikHax") ~= nil then
+		 game.CoreGui:FindFirstChild("MagikHax"):Destroy()
 	end
 	
 local MagikHax = Instance.new("ScreenGui")
 local Handler = Instance.new("Frame")
 local UIListLayout = Instance.new("UIListLayout")
 MagikHax.Name = "MagikHax"
-MagikHax.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MagikHax.Parent = game.CoreGui
 MagikHax.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 MagikHax.ResetOnSpawn = false
 Handler.Name = "Handler"
