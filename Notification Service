@@ -2,7 +2,7 @@
  - thanks for using notification service by SlaxxF!
  - here is how you use my service!
  
-Notification.new("TITLE","DESCRIPTION",{Enter = 0.6,Exit = 0.8})
+Notification("TITLE","DESCRIPTION",{Enter = 0.6,Exit = 0.8})
 
  - The Enter and Exit are the Enter Time and Exit time... You can change these, but dont remove them!
  - Title and Description are changable, and everything is basically done!
