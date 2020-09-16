@@ -1,11 +1,4 @@
-local key = _G.Key
-local check = "https://luawhitelistcheck.000webhostapp.com/check.php?key=" .. key
-if game:HttpGet(check) == "Whitelisted" then
-    print("loaded Whitelist")
-    if key == "WallyV2" then
-        wait(0.2)
-        print("Loading Library")
-        wait(0.2)
+
         local library = {count = 0, queue = {}, callbacks = {}, rainbowtable = {}, toggled = true, binds = {}};
 local defaults; do
     local dragger = {}; do
@@ -1067,7 +1060,3 @@ local defaults; do
 end
 
 return library
-    end
-else
-    game.Players.LocalPlayer:Kick("Script removed or invalid key")
-end
