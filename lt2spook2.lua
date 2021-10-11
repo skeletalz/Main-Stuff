@@ -22,8 +22,12 @@ end;
 if tree == false then
     rconsoleprint('@@RED@@');
     rconsoleprint('No Spook Tree Found\n');
-    game:GetService('TeleportService'):Teleport(13822889);
-    game:GetService('TeleportService'):Teleport(13822889);
 end
 loadstring(game:Httpget("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/teleport.lua"))()
-syn.queue_on_teleport('loadstring(game:Httpget("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/lt2spook1.lua"))()')
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        syn.queue_on_teleport([[
+            loadstring(game:Httpget("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/lt2spook2.lua"))()
+        ]])
+    end
+end)
