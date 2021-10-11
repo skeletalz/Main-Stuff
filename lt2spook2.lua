@@ -4,7 +4,7 @@ rconsoleprint('@@YELLOW@@');
 
 rconsoleprint('Searching For Spook Tree   |   ');
 
-repeat wait() until workspace:IsLoaded() and game.Players.LocalPlayer.Character;
+repeat wait() until workspace.TreeRegion and game.Players.LocalPlayer.Character;
 
 for i,v in pairs(game.Workspace:GetChildren()) do
     if v.Name == 'TreeRegion' then
@@ -25,4 +25,4 @@ if tree == false then
     rconsoleprint('No Spook Tree Found\n');
     loadstring(game:HttpGet("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/teleport.lua"))()
 end
-syn.queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/lt2spooknew.lua"))()]])
+syn.queue_on_teleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/lt2spook2.lua"))()]])
