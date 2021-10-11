@@ -27,4 +27,4 @@ if tree == false then
     game:GetService('TeleportService'):Teleport(13822889);
 end
 loadstring(game:Httpget("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/teleport.lua"))()
-syn.queue_on_teleport("loadstring(game:Httpget(""))()")
+syn.queue_on_teleport('loadstring(game:Httpget("https://raw.githubusercontent.com/skeletalz/Main-Stuff/master/lt2spook.lua"))()')
